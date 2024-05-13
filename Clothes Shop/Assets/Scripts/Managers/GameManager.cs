@@ -1,12 +1,13 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class GameManager : MonoBehaviour
+
+namespace Managers
 {
-    private void Awake()
+    public class GameManager : MonoBehaviour
     {
-        SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive);
+        private void Awake()
+        {
+            SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive);
+        }
     }
 }
