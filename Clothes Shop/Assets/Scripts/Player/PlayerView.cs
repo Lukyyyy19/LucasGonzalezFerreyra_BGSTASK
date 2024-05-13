@@ -4,11 +4,16 @@ using System.Collections.Generic;
 using UnityEngine;
 using Enums;
 
+namespace Player
+{
+    
 public class PlayerView : MonoBehaviour
 {
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private ClothesView _clothesView;
     [SerializeField] private Animator _animator;
+    [SerializeField] private Rigidbody2D _rb;
+    public Rigidbody2D Rb => _rb;
     [SerializeField] private List<AnimationClip> _animationClips;
     private Dictionary<WalkDirection, int> _animationsMap;
     [SerializeField] public Clothes _startCloth;
@@ -28,13 +33,13 @@ public class PlayerView : MonoBehaviour
         };
     }
 
-    private void Start()
+    private void Awake()
     {
         _playerController = new PlayerController(this);
         AnimationsMapper();
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         _playerController.Move();
     }
@@ -52,4 +57,5 @@ public class PlayerView : MonoBehaviour
     {
         _playerController.OnDestroy();
     }
+}
 }

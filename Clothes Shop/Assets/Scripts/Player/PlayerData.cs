@@ -5,6 +5,9 @@ using UnityEngine;
 using Enums;
 using Unity.Collections;
 
+namespace Player
+{
+    
 [Serializable]
 public class PlayerData
 {
@@ -68,4 +71,5 @@ public class PlayerData
     {
         _currentCloth = clothe;
     }
+}
 }

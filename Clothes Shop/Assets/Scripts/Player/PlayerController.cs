@@ -3,6 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using Enums;
 using UnityEngine;
+
+namespace Player
+{
+    
 [Serializable]
 public class PlayerController
 {
@@ -19,8 +23,8 @@ public class PlayerController
     public void Move()
     {
         _playerData.UpdateDirection(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
-        var translation = _playerData.Dir * _playerData.Speed * Time.deltaTime;
-        _view.transform.Translate(translation);
+        var translation = _playerData.Dir * _playerData.Speed;
+        _view.Rb.velocity = translation;
     }
 
     public WalkDirection GetCurrentDirection()
@@ -37,4 +41,5 @@ public class PlayerController
     {
         _playerData.OnDirectionChanged -= _view.ChangeAnimation;
     }
+}
 }
