@@ -1,13 +1,18 @@
+using Player;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Managers
 {
-    public class GameManager : MonoBehaviour
+    public class GameManager : SingeltonMonoBehaviour<GameManager>
     {
-        private void Awake()
+        
+        protected override void Awake()
         {
+            base.Awake();
             SceneManager.LoadSceneAsync("Player", LoadSceneMode.Additive);
         }
+
+       
     }
 }

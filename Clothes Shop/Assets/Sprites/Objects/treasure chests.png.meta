@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 229b0f66cda834c4fb1df12f19625f77
+guid: cbb5f527a309bf145b55299fccca3f35
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,22 +97,43 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: char_a_p1_4har_dap1_v01_0
+      name: treasure chests_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 448
-        width: 64
-        height: 64
+        y: 160
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ecc53663fcb6164418c1131a6f5106ac
-      internalID: -2077155102
+      spriteID: 4f5adda735f7ac54f91b62f61739059f
+      internalID: -1758227531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: treasure chests_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f6989e70db7e1a40a74ac73f6fa9342
+      internalID: 383687154
       vertices: []
       indices: 
       edges: []
@@ -128,7 +149,36 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      char_a_p1_4har_dap1_v01_0: -2077155102
+      treasure chests_0: -1758227531
+      treasure chests_1: -116502482
+      treasure chests_10: 733909418
+      treasure chests_11: -1574893337
+      treasure chests_12: 2091427088
+      treasure chests_13: -1207107491
+      treasure chests_14: -180351993
+      treasure chests_15: 562829064
+      treasure chests_16: 2095987018
+      treasure chests_17: 1208923015
+      treasure chests_18: 2140354881
+      treasure chests_19: 14254566
+      treasure chests_2: 465625368
+      treasure chests_20: 822357372
+      treasure chests_21: -189184088
+      treasure chests_22: 549587955
+      treasure chests_23: -1601479563
+      treasure chests_24: 1692115784
+      treasure chests_25: 2009558122
+      treasure chests_26: 2038610242
+      treasure chests_27: 1016980242
+      treasure chests_28: -316587009
+      treasure chests_29: -517709750
+      treasure chests_3: -1558324590
+      treasure chests_4: -1557288198
+      treasure chests_5: 383687154
+      treasure chests_6: 126322217
+      treasure chests_7: 153118104
+      treasure chests_8: 726956679
+      treasure chests_9: -1245012213
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

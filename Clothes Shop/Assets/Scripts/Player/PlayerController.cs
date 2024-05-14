@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using Enums;
+using Managers;
 using UnityEngine;
 
 namespace Player
@@ -12,7 +13,7 @@ public class PlayerController
 {
     private PlayerView _view;
     [SerializeField]private PlayerData _playerData;
-    private bool _isPaused;
+    [SerializeField]private bool _isPaused;
     public PlayerController(PlayerView view)
     {
         _view = view;
@@ -21,6 +22,10 @@ public class PlayerController
         _playerData.OnDirectionChanged += _view.ChangeAnimation;
     }
 
+    public void Start()
+    {
+        ShopManager.Instance.InitializePlayerData(_playerData);
+    }
     public void Move()
     {
         if (_isPaused)
@@ -43,6 +48,19 @@ public class PlayerController
         return _playerData.CurrentCloth;
     }
 
+    public Clothes GetCurrentHat()
+    {
+        return _playerData.CurrentHat;
+    }
+
+    public void OnCollideEnter(Collider2D col)
+    {
+        if (Input.GetKeyDown(KeyCode.E) && col.TryGetComponent(out IDialogue dialogue))
+        {
+            dialogue.StartDialogue();
+        }
+    }
+    
     public void OnDestroy()
     {
         _playerData.OnDirectionChanged -= _view.ChangeAnimation;

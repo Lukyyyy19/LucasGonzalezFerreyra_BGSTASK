@@ -16,3 +16,6 @@ MonoBehaviour:
   lines:
   - Hello! This is a test.
   lineSpeed: 1
+  Consecuence:
+    m_PersistentCalls:
+      m_Calls: []

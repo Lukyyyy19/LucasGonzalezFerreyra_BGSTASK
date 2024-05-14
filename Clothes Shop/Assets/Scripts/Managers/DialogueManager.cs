@@ -13,6 +13,8 @@ namespace Managers
         [SerializeField] private TextMeshProUGUI _dialogueLine;
         [SerializeField] private GameObject _panel;
         private bool _currentLineFinished;
+        private Dialogue _currentDialogue;
+
         protected override void Awake()
         {
             base.Awake();
@@ -21,15 +23,18 @@ namespace Managers
 
         private void Update()
         {
-            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))&&_currentLineFinished)
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1")) && _currentLineFinished)
             {
                 _panel.SetActive(false);
                 ScreenManager.Instance.Resume();
+                _currentDialogue.Consecuence?.Invoke();
+                _currentLineFinished = false;
             }
         }
 
         public void WriteDialogue(Dialogue dialogue)
         {
+            _currentDialogue = dialogue;
             ScreenManager.Instance.Pause(true);
             Tween writer;
             _panel.SetActive(true);
@@ -38,7 +43,6 @@ namespace Managers
             writer = DOTween.To(() => line, x => line = x, dialogue.lines[0], dialogue.lineSpeed).OnUpdate(() =>
             {
                 _dialogueLine.text = line;
-
             });
             writer.OnComplete(() => { _currentLineFinished = true; });
         }

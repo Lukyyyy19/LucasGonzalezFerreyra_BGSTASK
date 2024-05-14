@@ -13,17 +13,9 @@ namespace Npc
             _view = view;
         }
 
-        public void OnCollideEnter(Collider2D col)
+        public void StartDialogue()
         {
-            if (col.CompareTag("Player"))
-            {
-                DialogueManager.Instance.WriteDialogue(_view.GetDialogue());
-            }
-        }
-
-        public void OnCollideExit(Collider2D col)
-        {
-            
+            DialogueManager.Instance.WriteDialogue(_view.GetDialogue());
         }
     }
 }
