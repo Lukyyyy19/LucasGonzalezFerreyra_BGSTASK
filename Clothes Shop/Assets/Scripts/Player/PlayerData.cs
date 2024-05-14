@@ -12,8 +12,9 @@ namespace Player
 public class PlayerData
 {
     //Movement
-    private float _speed = 5;
-    public float Speed => _speed;
+    private float _maxSpeed = 5;
+    private float _currentSpeed;
+    public float Speed => _currentSpeed;
     private Vector2 _direction;
     public Vector2 Dir => Vector2.ClampMagnitude(_direction,1);
     private int _coins;
@@ -34,6 +35,7 @@ public class PlayerData
 
     void Initializer()
     {
+        _currentSpeed = _maxSpeed;
         DirectionMapper();
     }
     private void  DirectionMapper()
@@ -67,6 +69,19 @@ public class PlayerData
         }
     }
 
+    public void Pause()
+    {
+        _currentDirection = WalkDirection.Pause;
+        _currentSpeed = 0;
+    } public void Resume()
+    {
+        _currentDirection = WalkDirection.None;
+        _currentSpeed = _maxSpeed;
+    }
+    public void UpdateSpeed(float newSpeed)
+    {
+        _currentSpeed = newSpeed;
+    }
     public void ChangeCloth(Clothes clothe)
     {
         _currentCloth = clothe;

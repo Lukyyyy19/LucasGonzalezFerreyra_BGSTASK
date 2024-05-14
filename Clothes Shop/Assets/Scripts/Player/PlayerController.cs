@@ -12,6 +12,7 @@ public class PlayerController
 {
     private PlayerView _view;
     [SerializeField]private PlayerData _playerData;
+    private bool _isPaused;
     public PlayerController(PlayerView view)
     {
         _view = view;
@@ -22,6 +23,11 @@ public class PlayerController
 
     public void Move()
     {
+        if (_isPaused)
+        {
+            _playerData.UpdateDirection(0,0);
+            return;
+        }
         _playerData.UpdateDirection(Input.GetAxisRaw("Horizontal"),Input.GetAxisRaw("Vertical"));
         var translation = _playerData.Dir * _playerData.Speed;
         _view.Rb.velocity = translation;
@@ -40,6 +46,18 @@ public class PlayerController
     public void OnDestroy()
     {
         _playerData.OnDirectionChanged -= _view.ChangeAnimation;
+    }
+
+    public void Pause()
+    {
+        _isPaused = true;
+        _playerData.Pause();
+    }
+
+    public void Resume()
+    {
+        _isPaused = false;
+        _playerData.Resume();
     }
 }
 }

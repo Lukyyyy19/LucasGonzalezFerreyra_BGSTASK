@@ -1,6 +1,8 @@
+using System;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
+using Unity.VisualScripting;
 using UnityEngine.UI;
 
 namespace Managers
@@ -10,8 +12,25 @@ namespace Managers
         [SerializeField] private TextMeshProUGUI _dialogueOwner;
         [SerializeField] private TextMeshProUGUI _dialogueLine;
         [SerializeField] private GameObject _panel;
+        private bool _currentLineFinished;
+        protected override void Awake()
+        {
+            base.Awake();
+            _panel.SetActive(false);
+        }
+
+        private void Update()
+        {
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetButtonDown("Fire1"))&&_currentLineFinished)
+            {
+                _panel.SetActive(false);
+                ScreenManager.Instance.Resume();
+            }
+        }
+
         public void WriteDialogue(Dialogue dialogue)
         {
+            ScreenManager.Instance.Pause(true);
             Tween writer;
             _panel.SetActive(true);
             _dialogueOwner.text = dialogue.owner;
@@ -21,6 +40,7 @@ namespace Managers
                 _dialogueLine.text = line;
 
             });
+            writer.OnComplete(() => { _currentLineFinished = true; });
         }
     }
 }

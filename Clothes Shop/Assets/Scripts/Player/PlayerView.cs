@@ -7,7 +7,7 @@ using Enums;
 namespace Player
 {
     
-public class PlayerView : MonoBehaviour
+public class PlayerView : MonoBehaviour,IPauseable
 {
     [SerializeField] private PlayerController _playerController;
     [SerializeField] private ClothesView _clothesView;
@@ -39,13 +39,19 @@ public class PlayerView : MonoBehaviour
         AnimationsMapper();
     }
 
+    private void Start()
+    {
+        ScreenManager.Instance.AddPauseable(this);
+    }
+
     private void FixedUpdate()
     {
         _playerController.Move();
     }
 
    public void ChangeAnimation(WalkDirection currentDirection)
-    {
+   {
+       _animator.speed = currentDirection == WalkDirection.Pause ? 0 : 1;
         if (_animationsMap.TryGetValue(currentDirection, out int animationClipHash))
         {
             _animator.CrossFade(animationClipHash,0);
@@ -56,6 +62,17 @@ public class PlayerView : MonoBehaviour
     private void OnDisable()
     {
         _playerController.OnDestroy();
+        ScreenManager.Instance.RemovePauseable(this);
+    }
+
+    public void Pause(bool isDialoguePause = false)
+    {
+        _playerController.Pause();
+    }
+
+    public void Resume()
+    {
+       _playerController.Resume();
     }
 }
 }

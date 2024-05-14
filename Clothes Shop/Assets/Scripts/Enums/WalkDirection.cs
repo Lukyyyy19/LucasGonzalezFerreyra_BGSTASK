@@ -10,6 +10,7 @@ namespace Enums
         // NorthWest,
         // SouthEast,
         // SouthWest,
-        None
+        None,
+        Pause
     }
 }
