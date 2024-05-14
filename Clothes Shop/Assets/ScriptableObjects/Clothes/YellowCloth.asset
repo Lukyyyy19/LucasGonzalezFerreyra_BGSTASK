@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: YellowCloth
   m_EditorClassIdentifier: 
   id: 2
-  price: 0
+  price: 15
+  icon: {fileID: 407736623, guid: 8f6ab71e2f63d55468fe13347744cff0, type: 3}
+  weareable: {fileID: 407736623, guid: ad60611426b79794e9bc26530bace106, type: 3}
+  clothName: Yellow Clothe

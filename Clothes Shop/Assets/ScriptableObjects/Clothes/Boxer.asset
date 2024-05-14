@@ -13,4 +13,7 @@ MonoBehaviour:
   m_Name: Boxer
   m_EditorClassIdentifier: 
   id: 1
-  price: 0
+  price: 1
+  icon: {fileID: 2043524187, guid: 939ba514110e017459b53ed47f03bd14, type: 3}
+  weareable: {fileID: 2043524187, guid: 42442f5bebdc57c439f219fc8d7b2a5a, type: 3}
+  clothName: Boxer

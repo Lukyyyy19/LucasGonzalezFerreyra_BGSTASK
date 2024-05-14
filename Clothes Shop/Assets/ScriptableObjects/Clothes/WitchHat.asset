@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 416e62fb5b344d5581455389d83dbcdc, type: 3}
-  m_Name: BlueCloth
+  m_Name: WitchHat
   m_EditorClassIdentifier: 
-  id: 3
-  price: 10
-  icon: {fileID: -556348289, guid: f87a1d9399b45a343ba2ca62643f76a2, type: 3}
-  weareable: {fileID: -556348289, guid: 9d02ac2be252be448a1e94434a30a54a, type: 3}
-  clothName: Blue Clothe
+  id: 11
+  price: 5
+  icon: {fileID: 21300000, guid: 5adbcb0e2ceeb664ebf1dbc42386d4b6, type: 2}
+  weareable: {fileID: 645003343, guid: 21051fa413f3ed74ab4d3892a3fa9178, type: 3}
+  clothName: Witch Hat
