@@ -24,5 +24,10 @@ namespace Npc
         {
             _npcController.StartDialogue();
         }
+
+        private void OnCollisionEnter2D(Collision2D other)
+        {
+            _npcController.Collide(other.collider);
+        }
     }
 }

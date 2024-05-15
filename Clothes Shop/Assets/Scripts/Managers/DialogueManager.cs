@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 using TMPro;
 using DG.Tweening;
@@ -12,7 +13,7 @@ namespace Managers
         [SerializeField] private TextMeshProUGUI _dialogueOwner;
         [SerializeField] private TextMeshProUGUI _dialogueLine;
         [SerializeField] private GameObject _panel;
-        private bool _currentLineFinished;
+        [SerializeField]private bool _currentLineFinished;
         private Dialogue _currentDialogue;
 
         protected override void Awake()
@@ -34,17 +35,28 @@ namespace Managers
 
         public void WriteDialogue(Dialogue dialogue)
         {
+            StartCoroutine(WriteDialogueCorutine(dialogue));
+        }
+
+        private IEnumerator WriteDialogueCorutine(Dialogue dialogue)
+        {
             _currentDialogue = dialogue;
             ScreenManager.Instance.Pause(true);
             Tween writer;
             _panel.SetActive(true);
             _dialogueOwner.text = dialogue.owner;
-            string line = "";
-            writer = DOTween.To(() => line, x => line = x, dialogue.lines[0], dialogue.lineSpeed).OnUpdate(() =>
+            foreach (var lines in dialogue.lines)
             {
-                _dialogueLine.text = line;
-            });
-            writer.OnComplete(() => { _currentLineFinished = true; });
+                _currentLineFinished = false;
+                string line = "";
+                writer = DOTween.To(() => line, x => line = x, lines, dialogue.lineSpeed).OnUpdate(() =>
+                {
+                    _dialogueLine.text = line;
+                });
+                yield return new WaitForSeconds(1.5f);
+            }
+            _currentLineFinished = true;
+            Debug.Log("assa");
         }
     }
 }

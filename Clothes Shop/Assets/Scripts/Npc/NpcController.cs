@@ -17,5 +17,13 @@ namespace Npc
         {
             DialogueManager.Instance.WriteDialogue(_view.GetDialogue());
         }
+
+        public void Collide(Collider2D col)
+        {
+            if (col.CompareTag("Chest"))
+            {
+                GameManager.Instance.ChestDelivered(5);
+            }
+        }
     }
 }

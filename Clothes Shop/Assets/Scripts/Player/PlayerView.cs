@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Enums;
 
+using TMPro;
 namespace Player
 {
     public class PlayerView : MonoBehaviour, IPauseable
@@ -17,7 +18,6 @@ namespace Player
         [SerializeField] private List<AnimationClip> _animationClips;
         private Dictionary<WalkDirection, int> _animationsMap;
         [SerializeField] public Clothes _startCloth;
-
         private void AnimationsMapper()
         {
             _animationsMap = new Dictionary<WalkDirection, int>()
@@ -40,6 +40,12 @@ namespace Player
         {
             _playerController.Start();
             ScreenManager.Instance.AddPauseable(this);
+        }
+
+        private void Update()
+        {
+            if(_playerController.IsPaused)return;
+            _playerController.CheckForInteractions();
         }
 
         private void FixedUpdate()
@@ -73,11 +79,6 @@ namespace Player
             {
                 _hatsView.gameObject.SetActive(false);
             }
-        }
-
-        private void OnTriggerEnter2D(Collider2D other)
-        {
-            
         }
 
         private void OnDisable()

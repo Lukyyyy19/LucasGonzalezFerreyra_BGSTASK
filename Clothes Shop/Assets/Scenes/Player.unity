@@ -531,6 +531,9 @@ MonoBehaviour:
       _clothes: []
       _currentClothes: []
     _isPaused: 0
+    _interacteableLayer:
+      serializedVersion: 2
+      m_Bits: 0
   _clothesView: {fileID: 368997128}
   _hatsView: {fileID: 1568593435}
   _animator: {fileID: 93273480}

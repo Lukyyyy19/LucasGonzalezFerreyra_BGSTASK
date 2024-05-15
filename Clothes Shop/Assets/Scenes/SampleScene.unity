@@ -211,8 +211,8 @@ GameObject:
   - component: {fileID: 117081445}
   - component: {fileID: 117081444}
   m_Layer: 0
-  m_Name: treasure chests_0
-  m_TagString: Untagged
+  m_Name: Chest
+  m_TagString: Chest
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -275,7 +275,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 15
   m_AngularDrag: 0.05
   m_GravityScale: 0
   m_Material: {fileID: 0}
@@ -329,7 +329,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1758227531, guid: cbb5f527a309bf145b55299fccca3f35, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -350,7 +350,7 @@ Transform:
   m_GameObject: {fileID: 117081443}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.78, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2910,6 +2910,7 @@ MonoBehaviour:
   _dialogueOwner: {fileID: 1230877154}
   _dialogueLine: {fileID: 533641264}
   _panel: {fileID: 1279337093}
+  _currentLineFinished: 0
 --- !u!1 &388871902
 GameObject:
   m_ObjectHideFlags: 0
@@ -3391,7 +3392,7 @@ GameObject:
   m_Component:
   - component: {fileID: 512831205}
   - component: {fileID: 512831206}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Hair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3453,7 +3454,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: -2077155102, guid: 229b0f66cda834c4fb1df12f19625f77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4296,7 +4297,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 705642209}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1407976407}
+        m_TargetAssemblyTypeName: ScreenManager, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &705642209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4905,8 +4918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0.000076293945}
-  m_SizeDelta: {x: 94.925, y: 53.377}
+  m_AnchoredPosition: {x: -4.012909, y: 0.00010681152}
+  m_SizeDelta: {x: 121.8596, y: 80.3115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1116534606
 MonoBehaviour:
@@ -4921,7 +4934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.9372549}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5629,7 +5642,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1365209220}
   - component: {fileID: 1365209221}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: char_a_p1_1out_pfpn_v04_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5691,7 +5704,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: -556348289, guid: 9d02ac2be252be448a1e94434a30a54a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -6030,7 +6043,8 @@ GameObject:
   - component: {fileID: 1422006156}
   - component: {fileID: 1422006158}
   - component: {fileID: 1422006159}
-  m_Layer: 0
+  - component: {fileID: 1422006160}
+  m_Layer: 6
   m_Name: Npc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6135,7 +6149,7 @@ BoxCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -6164,6 +6178,41 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _dialogue: {fileID: 11400000, guid: 61bf2a4eab62ca541b07911b22223d2a, type: 2}
+--- !u!70 &1422006160
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1422006155}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.00000020505468, y: 0.065728486}
+  m_Size: {x: 0.41216442, y: 0.9281214}
+  m_Direction: 0
 --- !u!1 &1509840005
 GameObject:
   m_ObjectHideFlags: 0
@@ -24746,6 +24795,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cd9e3b15c509ad4aa48f66308a0ce48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _chest: {fileID: 117081447}
+  _coinEarnedPrefab: {fileID: 3551769795093125708, guid: ea1129c5c72a3a94b9f6aea964ddfc79, type: 3}
 --- !u!4 &1934604506
 Transform:
   m_ObjectHideFlags: 0
@@ -24755,7 +24806,7 @@ Transform:
   m_GameObject: {fileID: 1934604504}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.055807658, y: -0.7390711, z: -0.08395987}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

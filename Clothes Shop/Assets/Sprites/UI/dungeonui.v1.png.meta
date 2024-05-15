@@ -231,7 +231,7 @@ TextureImporter:
         width: 32
         height: 22
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 5, y: 6, z: 4, w: 6}
       outline: []
       physicsShape: []
@@ -239,6 +239,27 @@ TextureImporter:
       bones: []
       spriteID: 412d3856c6001b840b607c5b00c2241c
       internalID: -1132872552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dungeonui.v1_7
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 267
+        width: 23
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 4, y: 2, z: 4, w: 2}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8dc25b065130bde4cb437e8bc40f48a5
+      internalID: -1839000963
       vertices: []
       indices: 
       edges: []
@@ -261,6 +282,7 @@ TextureImporter:
       dungeonui.v1_4: 54460777
       dungeonui.v1_5: -1519490537
       dungeonui.v1_6: -1132872552
+      dungeonui.v1_7: -1839000963
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

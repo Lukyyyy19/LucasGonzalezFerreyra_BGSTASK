@@ -14,7 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   owner: ShopKeeper
   lines:
-  - Hello! This is a test.
+  - Hey There! Do you want to buy clothes
+  - Bring me chests to earn coins
   lineSpeed: 1
   Consecuence:
     m_PersistentCalls:

@@ -44,4 +44,9 @@ public class ScreenManager : SingeltonMonoBehaviour<ScreenManager>
             pauseable.Resume();
         }
     }
+
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }

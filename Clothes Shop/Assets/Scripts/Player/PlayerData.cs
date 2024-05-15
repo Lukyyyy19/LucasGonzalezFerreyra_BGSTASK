@@ -17,7 +17,7 @@ namespace Player
         public float Speed => _currentSpeed;
         private Vector2 _direction;
         public Vector2 Dir => Vector2.ClampMagnitude(_direction, 1);
-        [SerializeField]private int _coins = 99;
+        [SerializeField]private int _coins = 20;
         public int Coins => _coins;
         private Dictionary<Vector2, WalkDirection> _directionMap;
         [SerializeField, ReadOnly] private WalkDirection _currentDirection;
@@ -64,7 +64,8 @@ namespace Player
 
         public void UpdateCoins(int updateBy)
         {
-            _coins += updateBy;
+            _coins = Mathf.Clamp(_coins + updateBy,0,99);
+            
         }
 
         public void UpdateDirection(float x, float y)

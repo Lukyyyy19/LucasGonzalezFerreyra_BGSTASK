@@ -119,6 +119,7 @@ namespace Managers
         public void OpenShop()
         {
             _shopPanel.SetActive(true);
+            _playerCoins.text = _playerData.Coins.ToString();
             ScreenManager.Instance.Pause(true);
         }
 
